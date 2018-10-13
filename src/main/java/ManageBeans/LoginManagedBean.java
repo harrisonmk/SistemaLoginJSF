@@ -1,7 +1,7 @@
 package ManageBeans;
 
 import Dao.UsuarioDAO;
-import com.mycompany.sistemaloginjsf.Usuario;
+import modelo.Usuario;
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;

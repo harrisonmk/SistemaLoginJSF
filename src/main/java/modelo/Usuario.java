@@ -1,5 +1,5 @@
 
-package com.mycompany.sistemaloginjsf;
+package modelo;
 
 import java.io.Serializable;
 import javax.persistence.Column;

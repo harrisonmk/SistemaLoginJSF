@@ -4,7 +4,7 @@
     <!-- provedor/implementacao do JPA -->
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <!-- entidade mapeada -->
-    <class>com.mycompany.sistemaloginjsf.Usuario</class>
+    <class>modelo.Usuario</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <!-- dados da conexao -->

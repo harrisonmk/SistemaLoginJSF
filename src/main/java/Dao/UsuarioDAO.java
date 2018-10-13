@@ -1,6 +1,6 @@
 package Dao;
 
-import com.mycompany.sistemaloginjsf.Usuario;
+import modelo.Usuario;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
