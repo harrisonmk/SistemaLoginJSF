@@ -7,37 +7,70 @@
         <title>Cadastro</title>
 
         <h:outputStylesheet library="css" name="estilo.css" />
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     </h:head>
     <h:body>
 
-        <h:form styleClass="centro">
+        <div class="row">
+            <div class="col s12 m6 push-m3">
 
-            <p:panelGrid columns="2">
+                <h3 class="light">Cadastro</h3>
 
-                <p:outputLabel value="Login:" for="login" />  
-                <p:inputText id="login" value="#{LoginMB.usuario.nomeUsuario}"/>   
-
-                <p:outputLabel value="Password:" for="senha" />  
-                <p:password id="senha" required="true" feedback="true" weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" promptLabel="Informe sua Senha" value="#{LoginMB.usuario.senha}"/>   
-
-                <p:outputLabel value="E-mail:" for="email" />  
-                <p:inputText id="email" value="#{LoginMB.usuario.email}"/>   
-
-                <p:outputLabel value="Cidade:" for="cidade" />  
-                <p:inputText id="cidade" value="#{LoginMB.usuario.cidade}"/>   
-
-                <p:outputLabel value="Telefone:" for="telefone" />  
-                <p:inputMask id="telefone" value="#{LoginMB.usuario.telefone}" mask="(999) 99999-9999"/>  
-
-                <p:outputLabel value="CPF:" for="cpf" />  
-                <p:inputMask id="cpf" value="#{LoginMB.usuario.cpf}" mask="999.999.999-99"/>  
-
-                <p:commandButton value="Cadastrar" action="#{LoginMB.insere()}"/>
-            </p:panelGrid>   
-
-        </h:form>    
+                <h:form>
 
 
+
+                    <div class="input-field col s12">
+
+                        <p:outputLabel value="Login:" for="login" />  
+                        <p:inputText id="login" value="#{LoginMB.usuario.nomeUsuario}"/>   
+                    </div>
+
+                    <div class="input-field col s12">
+
+                        <p:outputLabel value="Password:" for="senha" />  
+                        <p:password id="senha" required="true" feedback="true" weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte" promptLabel="Informe sua Senha" value="#{LoginMB.usuario.senha}"/>   
+                    </div>
+                    <div class="input-field col s12">
+
+                        <p:outputLabel value="E-mail:" for="email" />  
+                        <p:inputText id="email" value="#{LoginMB.usuario.email}"/>   
+                    </div>           
+
+                    <div class="input-field col s12">
+
+                        <p:outputLabel value="Cidade:" for="cidade" />  
+                        <p:inputText id="cidade" value="#{LoginMB.usuario.cidade}"/>   
+                    </div>
+
+
+                    <div class="input-field col s12">
+
+                        <p:outputLabel value="Telefone:" for="telefone" />  
+                        <p:inputMask id="telefone" value="#{LoginMB.usuario.telefone}" mask="(999) 99999-9999"/>  
+                    </div>
+
+                    <div class="input-field col s12">
+
+                        <p:outputLabel value="CPF:" for="cpf" />  
+                        <p:inputMask id="cpf" value="#{LoginMB.usuario.cpf}" mask="999.999.999-99"/>  
+                    </div> 
+
+                    <p:commandButton class="btn green" value="Cadastrar" action="#{LoginMB.insere()}"/>
+
+
+                </h:form>    
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
     </h:body>
 </html>
 

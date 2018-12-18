@@ -5,11 +5,13 @@ import modelo.Usuario;
 import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 @ManagedBean(name = "LoginMB")
-@ViewScoped
+@RequestScoped
 public class LoginManagedBean implements Serializable {
 
     private UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -27,6 +29,13 @@ public class LoginManagedBean implements Serializable {
         }
 
     }
+    
+     public String logout() {
+
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        usuario = null;
+        return "/index.xhtml?faces-redirect=true";
+    }
 
     public String insere() throws Exception {
 
@@ -42,7 +51,7 @@ public class LoginManagedBean implements Serializable {
             usuario.setCpf(usuario.getCpf());
 
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso!", "Usuário cadastrado com sucesso!"));
-            recebe = "/index";
+            recebe = "/index.xhtml";
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Erro no cadastro de usuário!"));
             recebe = null;
