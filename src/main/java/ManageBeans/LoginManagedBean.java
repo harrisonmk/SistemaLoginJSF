@@ -34,7 +34,7 @@ public class LoginManagedBean implements Serializable {
 
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         usuario = null;
-        return "/index.xhtml?faces-redirect=true";
+        return "/login.xhtml?faces-redirect=true";
     }
 
     public String insere() throws Exception {
@@ -51,7 +51,7 @@ public class LoginManagedBean implements Serializable {
             usuario.setCpf(usuario.getCpf());
 
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso!", "Usuário cadastrado com sucesso!"));
-            recebe = "/index.xhtml";
+            recebe = "/login.xhtml";
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Erro no cadastro de usuário!"));
             recebe = null;
